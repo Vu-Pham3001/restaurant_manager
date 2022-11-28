@@ -1,0 +1,1802 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Full API Restaurant",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/address": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "All address",
+                "operationId": "address",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "add address",
+                "operationId": "addAddress",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "city": {
+                                        "type": "text"
+                                    },
+                                    "district": {
+                                        "type": "text"
+                                    },
+                                    "wards": {
+                                        "type": "text"
+                                    },
+                                    "detail": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/address/{id}": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "show address",
+                "operationId": "showAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "address id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "edit address",
+                "operationId": "editAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "address id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "city id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "district",
+                        "in": "query",
+                        "description": "district id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "wards",
+                        "in": "query",
+                        "description": "wards id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "detail",
+                        "in": "query",
+                        "description": "detail",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "delete Address",
+                "operationId": "deleteAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/blog/status/{id}": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "status Blog",
+                "description": "status Blog",
+                "operationId": "statusBlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Blog id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/restaurant": {
+            "get": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "All Restaurant",
+                "operationId": "Restaurant",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get all user",
+                "operationId": "someRoute",
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user/{id}": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get user",
+                "operationId": "isUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "get user"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Delete user",
+                "description": "Delete user",
+                "operationId": "DeleteUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user/band/{id}": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Band user",
+                "description": "Band user",
+                "operationId": "BandUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user/active/{id}": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Active user",
+                "description": "Active user",
+                "operationId": "ActiveUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user/set-vendor/{id}": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Active user",
+                "description": "set vendor",
+                "operationId": "setVendor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/user/set-user/{id}": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "set user",
+                "description": "set user",
+                "operationId": "setUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/blog": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "get all Blog",
+                "operationId": "Blog",
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "add Blog",
+                "operationId": "addBlog",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "content": {
+                                        "type": "text"
+                                    },
+                                    "title": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "image[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/blog/{id}": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "detail Blog",
+                "operationId": "detailBlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "blog id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "edit Blog",
+                "operationId": "updateBlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "blog id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "in": "query",
+                        "description": "content",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "delete Blog",
+                "operationId": "deleteBlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "blog id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/blog/cmt": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "comment Blog",
+                "operationId": "cmtBlog",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "blog_id": {
+                                        "type": "integer"
+                                    },
+                                    "content": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/blog/repcmt": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Ceply Comment Blog",
+                "operationId": "repCmtBlog",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "cmt_id": {
+                                        "type": "integer"
+                                    },
+                                    "content": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/eating": {
+            "get": {
+                "tags": [
+                    "Eating"
+                ],
+                "summary": "All Eating of User",
+                "operationId": "EatingOfUser",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Eating"
+                ],
+                "summary": "Add Eating",
+                "operationId": "AddEating",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "price": {
+                                        "type": "text"
+                                    },
+                                    "discount": {
+                                        "type": "text"
+                                    },
+                                    "restaurant_id": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "image[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/eating/{id}": {
+            "get": {
+                "tags": [
+                    "Eating"
+                ],
+                "summary": "detailt eating",
+                "operationId": "ShowEating",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "eating id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Eating"
+                ],
+                "summary": "Delete Eating",
+                "operationId": "deleteEating",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Eating id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/eating/update": {
+            "post": {
+                "tags": [
+                    "Eating"
+                ],
+                "summary": "Edit Eating",
+                "operationId": "editEating",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "text"
+                                    },
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "price": {
+                                        "type": "text"
+                                    },
+                                    "discount": {
+                                        "type": "time"
+                                    },
+                                    "restaurant_id": {
+                                        "type": "time"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "image[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/image/{id}": {
+            "delete": {
+                "tags": [
+                    "Image"
+                ],
+                "summary": "Delete Image",
+                "operationId": "deleteImage",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Image id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/order": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "All order of User",
+                "operationId": "orderOfUser",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Add order",
+                "operationId": "Addorder",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "restaurant_id": {
+                                        "type": "text"
+                                    },
+                                    "table_id": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/order/{id}": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "detailt order",
+                "operationId": "Showorder",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "order id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/order-detail": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "All order detail of User",
+                "operationId": "OrderDetail",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Add order detail",
+                "operationId": "AddOrderDetail",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "order_id": {
+                                        "type": "text"
+                                    },
+                                    "eats": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/order-detail/{id}": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "detailt order detail",
+                "operationId": "ShoworderDetail",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "order id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/province": {
+            "get": {
+                "tags": [
+                    "Province"
+                ],
+                "summary": "All province",
+                "operationId": "province",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Province"
+                ],
+                "summary": "add province",
+                "operationId": "addProvince",
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/province/{id}": {
+            "get": {
+                "tags": [
+                    "Province"
+                ],
+                "summary": "detailt Province",
+                "operationId": "ShowProvince",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Province id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/recharge": {
+            "get": {
+                "tags": [
+                    "recharge"
+                ],
+                "summary": "all recharge is user",
+                "operationId": "rechargeAll",
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/recharge/momo-qr": {
+            "post": {
+                "tags": [
+                    "recharge"
+                ],
+                "summary": "add recharge",
+                "operationId": "recharge",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "amount": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/restaurant": {
+            "get": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "All Restaurant of User",
+                "operationId": "RestaurantOfUser",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "Add restaurant",
+                "operationId": "AddRestaurant",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "address": {
+                                        "type": "text"
+                                    },
+                                    "time_start": {
+                                        "type": "time"
+                                    },
+                                    "time_end": {
+                                        "type": "time"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "image[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/restaurant/{id}": {
+            "get": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "detailt restaurant",
+                "operationId": "ShowRestaurant",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "restaurant id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "Delete restaurant",
+                "operationId": "deleteRestaurant",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "restaurant id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/restaurant/update": {
+            "post": {
+                "tags": [
+                    "Restaurant"
+                ],
+                "summary": "Edit restaurant",
+                "operationId": "editRestaurant",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "text"
+                                    },
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "address": {
+                                        "type": "text"
+                                    },
+                                    "time_start": {
+                                        "type": "time"
+                                    },
+                                    "time_end": {
+                                        "type": "time"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "image[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/tableinfo": {
+            "get": {
+                "tags": [
+                    "TableInfo"
+                ],
+                "summary": "All TableInfo",
+                "operationId": "TableInfo",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "TableInfo"
+                ],
+                "summary": "Add TableInfo",
+                "operationId": "AddTableInfo",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "restaurant_id": {
+                                        "type": "text"
+                                    },
+                                    "type": {
+                                        "type": "text"
+                                    },
+                                    "chair": {
+                                        "type": "text"
+                                    },
+                                    "count": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/tableinfo/{id}": {
+            "get": {
+                "tags": [
+                    "TableInfo"
+                ],
+                "summary": "detailt TableInfo",
+                "operationId": "ShowTableInfo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "TableInfo id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "TableInfo"
+                ],
+                "summary": "Delete tableInfo",
+                "operationId": "deletetableInfo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "tableInfo id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/tableinfo/update": {
+            "post": {
+                "tags": [
+                    "TableInfo"
+                ],
+                "summary": "Edit TableInfo",
+                "operationId": "editTableInfo",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "text"
+                                    },
+                                    "type": {
+                                        "type": "text"
+                                    },
+                                    "chair": {
+                                        "type": "text"
+                                    },
+                                    "count": {
+                                        "type": "time"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get user",
+                "operationId": "isUsers",
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/user-info": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Edit user",
+                "description": "Edit user",
+                "operationId": "EditUser",
+                "parameters": [
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "description": "Phone number",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "description": "Your address",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "description": "your gender",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "birday",
+                        "in": "query",
+                        "description": "Phone number (Y-m-d)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/logout": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "logout",
+                "description": "logout",
+                "operationId": "logout",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "login",
+                "description": "login",
+                "operationId": "login",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "type": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "register",
+                "description": "register",
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "text"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "type": "password"
+                                    },
+                                    "cpassword": {
+                                        "type": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/user-vendor": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "request is vendor",
+                "description": "request is vendor",
+                "operationId": "RequestVendor",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/vote": {
+            "get": {
+                "tags": [
+                    "Vote"
+                ],
+                "summary": "All vote",
+                "operationId": "AllVote",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Vote"
+                ],
+                "summary": "Add Vote",
+                "operationId": "AddVote",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "type": "bigint"
+                                    },
+                                    "vote": {
+                                        "type": "integer"
+                                    },
+                                    "discription": {
+                                        "type": "text"
+                                    },
+                                    "restaurant_id": {
+                                        "type": "bigint"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/vote/{id}": {
+            "get": {
+                "tags": [
+                    "Vote"
+                ],
+                "summary": "detailt Vote",
+                "operationId": "ShowVote",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "vote id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Vote"
+                ],
+                "summary": "Delete vote",
+                "operationId": "deleteVote",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "vote id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success with some route data"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Account",
+            "description": "full api"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearer": {
+                "type": "http",
+                "description": "Authorization token obtained from logging in.",
+                "name": "Authorization",
+                "in": "header",
+                "scheme": "Bearer"
+            }
+        }
+    }
+}
